@@ -225,3 +225,60 @@
         padding-left: 25px;
     }
 }
+
+/* Read me卡片 */
+.ui-dialog-titlebar {
+    background: #FFFFFF;
+    border-width: 0;
+}
+.blog-card-read {
+    border-radius: 15px;
+}
+.blog-card-read > .read-left {
+    background: #81C979;
+    width: 35%;
+    height: inherit;
+    float: left;
+}
+.blog-card-read > .read-left > img {
+    height: inherit;
+}
+.blog-card-read > .read-right {
+    width: 60%;
+    float: right;
+}
+.blog-card-read > .read-right > .read-right-title {
+    width: 100%;
+    height: 28px;
+}
+.blog-card-read > .read-right > .read-right-title > h3 {
+    float: left;
+}
+.blog-card-read > .read-right > .read-right-info {
+    margin-top: 5px;
+    width: 100%;
+    height: 18px;
+}
+.blog-card-read > .read-right > .read-right-info > h5 {
+    float: left;
+}
+.blog-card-read > .read-right > .read-right-text {
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+}
+.blog-card-read > .read-right > .read-right-text > p {
+    float: left;
+}
+.blog-card-read > .read-right > .read-right-lx {
+    margin-top: 40px;
+    width: 100%;
+    height: auto;
+}
+
+.blog-card-read > .read-right > .read-right-lx > p {
+
+    font-size: 5px;
+    color: #79796b;
+    float: bottom;
+}
