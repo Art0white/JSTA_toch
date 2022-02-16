@@ -3,8 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "mybatis-3-mapper.dtd">
 <mapper namespace="com.xq.tmall.dao.IdeaMapper">
+    <resultMap id="ideaMap" type="com.xq.tmall.entity.Idea">
+        <id column="idea_id" property="ideaId"/>
+        <result column="idea_user_id" property="userId"/>
+        <result column="idea_title" property="ideaTitle"/>
+        <result column="idea_content" property="ideaContent"/>
+        <result column="idea_picture_src" property="ideaPictureSrc"/>
+        <result column="idea_telphone" property="ideaTelphone"/>
+        <result column="idea_mail" property="ideaMail"/>
+        <result column="createDate" property="createDate"/>
+    </resultMap>
 
-    <select id="getNewIdea" resultType="com.xq.tmall.entity.Idea">
+    <select id="getNewIdea" resultMap="ideaMap">
         SELECT * from idea
     </select>
 
