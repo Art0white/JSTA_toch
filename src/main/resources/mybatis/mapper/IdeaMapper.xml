@@ -3,13 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "mybatis-3-mapper.dtd">
 <mapper namespace="com.xq.tmall.dao.IdeaMapper">
-    <select id="getNewIdae" resultType="com.xq.tmall.entity.Idea">
-        select * from idea
+
+    <select id="getNewIdea" resultType="com.xq.tmall.entity.Idea">
+        SELECT * from idea
     </select>
 
     <insert id="insertIdea" parameterType="com.xq.tmall.entity.Idea">
-        insert into idea(idea_user_id,idea_title,idea_content,idea_picture_src,idea_telphone,idea_mail)
-        values(#{UserId},#{ideaTitle},#{ideaContent},#{ideaPictureSrc},#{ideaTelphone},#{ideaMail});
+        INSERT INTO idea(idea_user_id,idea_title,idea_content,idea_picture_src,idea_telphone,idea_mail,createDate)
+        VALUES(#{idea.userId},#{idea.ideaTitle},#{idea.ideaContent},#{idea.ideaPictureSrc},#{idea.ideaTelphone},#{idea.ideaMail},#{idea.createDate});
     </insert>
 
 

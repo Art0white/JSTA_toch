@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
+
 /**
  * @Description:idea
  * @Author：dongRuiLong
@@ -38,7 +40,7 @@ public class IdeaVo {
     /**
      * 创意中的图片文件
      */
-    private MultipartFile ideaPicture;
+    private String ideaPictureSrc;
 
     /**
      * 创意联系方式：手机号
@@ -49,4 +51,9 @@ public class IdeaVo {
      * 创意联系方式：邮箱
      */
     private String ideaMail;
+
+    /**
+     * 发布日期
+     */
+    private Date createDate;
 }

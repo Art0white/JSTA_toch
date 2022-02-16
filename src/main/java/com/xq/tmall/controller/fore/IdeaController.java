@@ -6,9 +6,13 @@ import com.xq.tmall.util.RespBean;
 import com.xq.tmall.vo.IdeaVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -30,27 +34,29 @@ public class IdeaController {
      * @return
      */
     @RequestMapping(value = "/ideaCircle", method = RequestMethod.GET)
-    public String goToPage(HttpSession session, Map<String, Object> map) {
-        return "fore/ideaCircle";
+    public ModelAndView goToPage(HttpSession session, Map<String, Object> map) {
+        ModelAndView modelAndView =new ModelAndView("fore/ideaCircle");
+        ideaService.getNewIdea(session, map);
+        return modelAndView;
     }
 
-    /**
-     * 获取new idea模块所有信息
-     * @return
-     */
-    @RequestMapping("/getIdea")
-    public RespBean getNewIdea(){
-        return ideaService.getNewIdea();
-    }
+//    /**
+//     * 获取new idea模块所有信息
+//     * @return
+//     */
+//    @RequestMapping(value = "/getIdea", method = RequestMethod.GET)
+//    public RespBean getNewIdea(HttpSession session, Map<String, Object> map){
+//        return ideaService.getNewIdea(session, map);
+//    }
 
     /**
      * 添加new idea
-     * @param ideaVo
-     * @param session
+     * @param ideaVo,session
+     * @param "fore/ideaCircle"
      * @return
      */
-    @RequestMapping("/addIdea")
-    public RespBean addIdea(IdeaVo ideaVo, HttpSession session){
-        return ideaService.addIdea(ideaVo,session);
+    @RequestMapping(value = "/addIdea", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
+    public String addIdea(IdeaVo ideaVo, HttpSession session){
+        return ideaService.addIdea(ideaVo, session);
     }
 }

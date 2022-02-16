@@ -51,24 +51,24 @@ public class ForeHomeController extends BaseController {
         logger.info("获取产品分类列表");
         List<Category> categoryList = categoryService.getList(null,null);
         logger.info("获取每个分类下的产品列表");
-       for(Category category : categoryList){
-           List<Product> productList = productService.getList(
+        for(Category category : categoryList){
+            List<Product> productList = productService.getList(
                    new Product().setProduct_category(category),
                    new Byte[]{0, 2},
                    new OrderUtil("product_sale_count", true), new PageUtil(0, 8)
-           );
-           if (productList != null) {
-               for (Product product : productList) {
-                   Integer product_id = product.getProduct_id();
-                   product.setSingleProductImageList(
-                           productImageService.getList(
+            );
+            if (productList != null) {
+                for (Product product : productList) {
+                    Integer product_id = product.getProduct_id();
+                    product.setSingleProductImageList(
+                            productImageService.getList(
                                    product_id, (byte) 0, new PageUtil(0, 1)
                            )
-                   );
-               }
-           }
+                    );
+                }
+            }
            category.setProductList(productList);
-       }
+        }
         map.put("categoryList",categoryList);
         logger.info("获取促销产品列表");
         List<Product> specialProductList = productService.getList(

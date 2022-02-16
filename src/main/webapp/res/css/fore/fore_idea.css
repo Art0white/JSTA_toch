@@ -269,6 +269,7 @@
 }
 .blog-card-read > .read-right > .read-right-text > p {
     float: left;
+    width: 100%;
 }
 .blog-card-read > .read-right > .read-right-lx {
     margin-top: 40px;
