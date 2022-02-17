@@ -71,12 +71,12 @@ public class IdeaServiceImpl implements IdeaService {
         //User user = UserContext.getUser();
         System.out.println(user);
         //将idea存入数据库
-        // 将图片存入七牛云
-        MultipartFile ideaPicture = ideaVo.getIdeaPicture();
-        //上传到七牛云的图片url
-        String Url;
+//        //将图片存入七牛云
+        MultipartFile ideaPicture = ideaVo.getIdeaPictureSrc();
+//        //上传到七牛云的图片url
+        String Url = null;
         if(ideaPicture.isEmpty()){
-            return RespBean.error(RespBeanEnum.EMPTY_FILE);
+            return null;
         }
         try {
             byte[] pictureBytes = ideaPicture.getBytes();
@@ -87,13 +87,13 @@ public class IdeaServiceImpl implements IdeaService {
                 Url = qiniuService.saveImage(ideaPicture);
             } catch (Exception e) {
                 e.printStackTrace();
-                return RespBean.error(RespBeanEnum.ERROR_FILE);
+                return null;
             }
         } catch (IOException e) {
             e.printStackTrace();
-            return RespBean.error(RespBeanEnum.ERROR_FILE);
+            return null;
         }
-        //将idea中的其他信息传到数据库中
+//        //将idea中的其他信息传到数据库中
         //获取userId
         Idea idea=new Idea(user.getUser_id(),ideaVo.getIdeaTitle(),ideaVo.getIdeaContent(),Url,ideaVo.getIdeaTelphone(),ideaVo.getIdeaMail(), new Date());
         ideaMapper.insertIdea(idea);

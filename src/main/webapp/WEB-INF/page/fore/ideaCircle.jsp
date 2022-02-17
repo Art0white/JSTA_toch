@@ -103,7 +103,8 @@
         <c:forEach var="n" items="${requestScope.newIdea}" varStatus="i">
             <div class="blog-card">
                 <div class="meta">
-                    <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
+<%--                    <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>--%>
+                    <div class="photo" style="background-image: url(http://${n.ideaPictureSrc})"></div>
                     <ul class="details">
                         <li class="author"><a href="#">${n.userId}</a></li>
                         <li class="date">${n.createDate}</li>
@@ -123,7 +124,7 @@
                         <%--    左图    --%>
                     <div class="read-left">
                             <%--                <img src="${pageContext.request.contextPath}/res/images/fore/WebsiteImage/T1MQ1cXhtiXXXXXXXX-78-120.png">--%>
-                        <img src="${n.ideaPictureSrc}">
+                        <img src="http://${n.ideaPictureSrc}">
                     </div>
                         <%--    右文字    --%>
                     <div class="read-right">

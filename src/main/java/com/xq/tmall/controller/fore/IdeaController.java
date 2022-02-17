@@ -1,7 +1,9 @@
 package com.xq.tmall.controller.fore;
 
 
+import com.xq.tmall.entity.User;
 import com.xq.tmall.service.IdeaService;
+import com.xq.tmall.service.UserService;
 import com.xq.tmall.util.RespBean;
 import com.xq.tmall.vo.IdeaVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +31,20 @@ public class IdeaController {
 
     @Resource(name = "ideaService")
     private IdeaService ideaService;
+    @Resource(name = "userService")
+    private UserService userService;
     /**
      * 跳转到创意圈子页面
      * @return
      */
     @RequestMapping(value = "/ideaCircle", method = RequestMethod.GET)
     public ModelAndView goToPage(HttpSession session, Map<String, Object> map) {
+        Object userId = session.getAttribute("userId");
+        if (userId != null) {
+            User user = userService.get(Integer.parseInt(userId.toString()));
+            map.put("user", user);
+        }
+
         ModelAndView modelAndView =new ModelAndView("fore/ideaCircle");
         ideaService.getNewIdea(session, map);
         return modelAndView;
@@ -57,9 +67,19 @@ public class IdeaController {
      */
     @RequestMapping(value = "/addIdea", method = RequestMethod.POST, produces = "multipart/form-data;charset=utf-8")
     public ModelAndView addIdea(IdeaVo ideaVo, HttpSession session, Map<String, Object> map){
-        ideaService.getNewIdea(session, map);
+
+        Object userId = session.getAttribute("userId");
+        if (userId != null) {
+            User user = userService.get(Integer.parseInt(userId.toString()));
+            map.put("user", user);
+        }
+
+//        ideaService.getNewIdea(session, map);
         ideaService.addIdea(ideaVo, session);
-        ModelAndView modelAndView = new ModelAndView("fore/ideaCircle");
-        return modelAndView;
+
+//        ModelAndView modelAndView = new ModelAndView("fore/ideaCircle");
+//        return modelAndView;
+        return goToPage(session, map);
     }
+
 }

@@ -40,7 +40,7 @@ public class IdeaVo {
     /**
      * 创意中的图片文件
      */
-    private MultipartFile ideaPicture;
+    private MultipartFile ideaPictureSrc;
     /**
      * 创意联系方式：手机号
      */

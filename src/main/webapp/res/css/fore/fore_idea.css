@@ -235,6 +235,7 @@
     border-radius: 15px;
 }
 .blog-card-read > .read-left {
+    overflow: hidden;
     background: #81C979;
     width: 35%;
     height: inherit;
