@@ -55,8 +55,11 @@ public class IdeaController {
      * @param "fore/ideaCircle"
      * @return
      */
-    @RequestMapping(value = "/addIdea", method = RequestMethod.POST, produces = "application/json;charset=utf-8")
-    public String addIdea(IdeaVo ideaVo, HttpSession session){
-        return ideaService.addIdea(ideaVo, session);
+    @RequestMapping(value = "/addIdea", method = RequestMethod.POST, produces = "multipart/form-data;charset=utf-8")
+    public ModelAndView addIdea(IdeaVo ideaVo, HttpSession session, Map<String, Object> map){
+        ideaService.getNewIdea(session, map);
+        ideaService.addIdea(ideaVo, session);
+        ModelAndView modelAndView = new ModelAndView("fore/ideaCircle");
+        return modelAndView;
     }
 }

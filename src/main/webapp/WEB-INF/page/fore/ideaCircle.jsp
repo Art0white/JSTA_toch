@@ -73,7 +73,7 @@
 
     <%--    卡片表单    --%>
     <div id="aa" title="创意" align="center" style="display: none">
-        <form role="form" action="${pageContext.request.contextPath}/newIdea/addIdea" id="ideaForm" method="post">
+        <form role="form" action="${pageContext.request.contextPath}/newIdea/addIdea" id="ideaForm" method="post" enctype="multipart/form-data">
             <div style="height: 30px">
                 <label style="float: left;">创意标题：</label><input style="float: right; width: 280px;" type="text" id="ideaTitle" name="ideaTitle">
             </div>

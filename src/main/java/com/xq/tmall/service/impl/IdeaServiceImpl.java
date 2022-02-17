@@ -62,7 +62,7 @@ public class IdeaServiceImpl implements IdeaService {
      * @return
      */
     @Override
-    public String addIdea(IdeaVo ideaVo, HttpSession session) {
+    public RespBean addIdea(IdeaVo ideaVo, HttpSession session) {
         //根据session获取userId
         Integer userId=(Integer)session.getAttribute("userId");
         //根据userId获取user对象
@@ -71,32 +71,32 @@ public class IdeaServiceImpl implements IdeaService {
         //User user = UserContext.getUser();
         System.out.println(user);
         //将idea存入数据库
-//        //将图片存入七牛云
-//        MultipartFile ideaPicture = ideaVo.getIdeaPicture();
-//        //上传到七牛云的图片url
-        String Url = "123";
-//        if(ideaPicture.isEmpty()){
-//            return RespBean.error(RespBeanEnum.EMPTY_FILE);
-//        }
-//        try {
-//            byte[] pictureBytes = ideaPicture.getBytes();
-//            //随机生成UUID作为图片名称
-//            String imgName = UUIDUtil.getUUID();
-//            try {
-//                QiniuService qiniuService = new QiniuService();
-//                Url = qiniuService.saveImage(ideaPicture);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                return RespBean.error(RespBeanEnum.ERROR_FILE);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return RespBean.error(RespBeanEnum.ERROR_FILE);
-//        }
-//        //将idea中的其他信息传到数据库中
+        // 将图片存入七牛云
+        MultipartFile ideaPicture = ideaVo.getIdeaPicture();
+        //上传到七牛云的图片url
+        String Url;
+        if(ideaPicture.isEmpty()){
+            return RespBean.error(RespBeanEnum.EMPTY_FILE);
+        }
+        try {
+            byte[] pictureBytes = ideaPicture.getBytes();
+            //随机生成UUID作为图片名称
+            String imgName = UUIDUtil.getUUID();
+            try {
+                QiniuService qiniuService = new QiniuService();
+                Url = qiniuService.saveImage(ideaPicture);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return RespBean.error(RespBeanEnum.ERROR_FILE);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return RespBean.error(RespBeanEnum.ERROR_FILE);
+        }
+        //将idea中的其他信息传到数据库中
         //获取userId
         Idea idea=new Idea(user.getUser_id(),ideaVo.getIdeaTitle(),ideaVo.getIdeaContent(),Url,ideaVo.getIdeaTelphone(),ideaVo.getIdeaMail(), new Date());
         ideaMapper.insertIdea(idea);
-        return "fore/ideaCircle";
+        return RespBean.success();
     }
 }

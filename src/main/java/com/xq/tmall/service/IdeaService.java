@@ -28,5 +28,5 @@ public interface IdeaService {
      * @param session
      * @return
      */
-    public String addIdea(IdeaVo ideaVo, HttpSession session);
+    public RespBean addIdea(IdeaVo ideaVo, HttpSession session);
 }
