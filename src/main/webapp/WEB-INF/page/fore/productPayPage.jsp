@@ -3,7 +3,7 @@
 <head>
     <script src="${pageContext.request.contextPath}/res/js/fore/fore_reward.js"></script>
     <link href="${pageContext.request.contextPath}/res/css/fore/fore_orderPay.css" rel="stylesheet"/>
-    <title>天猫tmall.com - 网上支付</title>
+    <title>架上添安 - 网上支付</title>
     <style type="text/css">
         .frm_label{
             cursor: pointer;
@@ -82,7 +82,7 @@
     <div class="header">
         <div id="mallLogo">
             <a href="${pageContext.request.contextPath}"><img
-                    src="${pageContext.request.contextPath}/res/images/fore/WebsiteImage/tmallLogoA.png"></a>
+                    src="${pageContext.request.contextPath}/res/images/fore/WebsiteImage/logo.png"></a>
         </div>
     </div>
 </nav>
@@ -166,6 +166,6 @@
         </div>
     </div>
 </div>
-<%@include file="include/footer_two.jsp" %>
+<%--<%@include file="include/footer_two.jsp" %>--%>
 <%@include file="include/footer.jsp" %>
 </body>

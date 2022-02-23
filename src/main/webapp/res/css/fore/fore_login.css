@@ -3,7 +3,7 @@
     width: 100%;
     min-width: 1190px;
     margin-bottom: 40px;
-    background-color: rgb(241, 220, 165);
+    background-color: rgb(110, 189, 215);
     font-family: "Microsoft YaHei UI", serif;
 }
 
@@ -13,6 +13,9 @@
     height: 600px;
     margin: auto;
     /*background-image: url(../../images/fore/WebsiteImage/loginbz3.jpg);*/
+    background-image: url("https://s3.bmp.ovh/imgs/2022/02/f0e338dd11f6a590.jpg");
+    background-size: 1190px 600px;
+    background-repeat:no-repeat;
 }
 
 .loginDiv {
@@ -20,34 +23,35 @@
     height: 400px;
     position: absolute;
     top: 91px;
-    right: 425px;
+    /*margin: 0 auto;*/
+    right: 600px;
     background: #ffffff;
     color: #404040;
 }
 
-.loginSwitch {
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    right: 5px;
-    top: 12px;
-    background-image: url(../../images/fore/WebsiteImage/scan_icon.png);
-    cursor: pointer;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
+/*.loginSwitch {*/
+/*    position: absolute;*/
+/*    width: 52px;*/
+/*    height: 52px;*/
+/*    right: 5px;*/
+/*    top: 12px;*/
+/*    background-image: url(../../images/fore/WebsiteImage/scan_icon.png);*/
+/*    cursor: pointer;*/
+/*    -webkit-background-size: cover;*/
+/*    background-size: cover;*/
+/*}*/
 
-.loginSwitch_two {
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    right: 5px;
-    top: 12px;
-    background-image: url(../../images/fore/WebsiteImage/pc_icon.png);
-    cursor: pointer;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
+/*.loginSwitch_two {*/
+/*    position: absolute;*/
+/*    width: 52px;*/
+/*    height: 52px;*/
+/*    right: 5px;*/
+/*    top: 12px;*/
+/*    background-image: url(../../images/fore/WebsiteImage/pc_icon.png);*/
+/*    cursor: pointer;*/
+/*    -webkit-background-size: cover;*/
+/*    background-size: cover;*/
+/*}*/
 
 .loginDiv > .loginMessage {
     position: absolute;
@@ -144,7 +148,7 @@
     width: 300px;
     height: 42px;
     line-height: 42px;
-    background-color: #ff0036;
+    background-color: rgba(194, 91, 91, 0.89);
     font-weight: 700;
     font-size: 16px;
     color: #ffffff;
@@ -155,7 +159,7 @@
 }
 
 .loginButton:hover {
-    background-color: #ff335e;
+    background-color: rgba(194, 91, 91, 0.89);
 }
 
 .pwdLogin .loginLinks {

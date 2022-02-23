@@ -3,7 +3,7 @@
 <head>
     <script src="${pageContext.request.contextPath}/res/js/fore/fore_productBuy.js"></script>
     <link href="${pageContext.request.contextPath}/res/css/fore/fore_productBuyPage.css" rel="stylesheet"/>
-    <title>确认订单 - Tmall.com天猫-理想生活上天猫</title>
+    <title>确认订单 - 架上添安-安防产品领导者</title>
     <script>
         $(function () {
             $("span.address_province").text($("#select_order_address_province").find("option:selected").text());
@@ -308,7 +308,7 @@
         </c:choose>
     </div>
 </div>
-<%@include file="include/footer_two.jsp" %>
+<%--<%@include file="include/footer_two.jsp" %>--%>
 <%@include file="include/footer.jsp" %>
 <div class="loader"></div>
 </body>

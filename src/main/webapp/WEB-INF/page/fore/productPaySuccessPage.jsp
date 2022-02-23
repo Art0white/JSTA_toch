@@ -2,7 +2,7 @@
 <%@ include file="include/header.jsp" %>
 <head>
     <link href="${pageContext.request.contextPath}/res/css/fore/fore_orderPaySuccess.css" rel="stylesheet"/>
-    <title>天猫tmall.com - 网上支付</title>
+    <title>架上添安 - 网上支付</title>
 </head>
 <body>
 <nav>
@@ -10,12 +10,12 @@
     <div class="header">
         <div id="mallLogo">
             <a href="${pageContext.request.contextPath}"><img
-                    src="${pageContext.request.contextPath}/res/images/fore/WebsiteImage/tmallLogoA.png"></a>
+                    src="${pageContext.request.contextPath}/res/images/fore/WebsiteImage/logo.png"></a>
         </div>
         <div class="shopSearchHeader">
             <form action="${pageContext.request.contextPath}/product" method="get">
                 <div class="shopSearchInput">
-                    <input type="text" class="searchInput" name="product_name" placeholder="搜索 天猫 商品/品牌/店铺"
+                    <input type="text" class="searchInput" name="product_name" placeholder="搜索 建筑类别/产品名称"
                            value="${requestScope.searchValue}" maxlength="50">
                     <input type="submit" value="搜 索" class="searchBtn">
                 </div>
@@ -54,7 +54,7 @@
                         <strong>安全提醒：</strong>
                         <span class="info">下单后，</span>
                         <span class="warn">用QQ给您发送链接办理退款的都是骗子</span>
-                        <span class="info">！天猫不存在系统升级，订单异常等问题，谨防假冒客服电话诈骗！</span>
+                        <span class="info">！架上添安不存在系统升级，订单异常等问题，谨防假冒客服电话诈骗！</span>
                     </p>
                 </li>
             </ul>
@@ -71,6 +71,6 @@
         </div>
     </div>
 </div>
-<%@include file="include/footer_two.jsp" %>
+<%--<%@include file="include/footer_two.jsp" %>--%>
 <%@include file="include/footer.jsp" %>
 </body>

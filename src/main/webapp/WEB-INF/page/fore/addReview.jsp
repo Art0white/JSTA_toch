@@ -2,7 +2,7 @@
 <%@ include file="include/header.jsp" %>
 <head>
     <link href="${pageContext.request.contextPath}/res/css/fore/fore_addReview.css" rel="stylesheet"/>
-    <title>添加评论 - Tmall.com天猫-理想生活上天猫</title>
+    <title>添加评论 - 架上添安-安防产品领导者</title>
     <script>
         $(function () {
             $("#review_form").submit(function () {
@@ -30,7 +30,7 @@
     <div class="shopSearchHeader">
         <form action="${pageContext.request.contextPath}/product" method="get">
             <div class="shopSearchInput">
-                <input type="text" class="searchInput" name="product_name" placeholder="搜索 天猫 商品/品牌/店铺"
+                <input type="text" class="searchInput" name="product_name" placeholder="搜索 建筑类别/产品名称"
                        maxlength="50">
                 <input type="submit" value="搜 索" class="searchBtn">
             </div>
@@ -95,6 +95,6 @@
         </div>
     </div>
 </div>
-<%@include file="include/footer_two.jsp" %>
+<%--<%@include file="include/footer_two.jsp" %>--%>
 <%@include file="include/footer.jsp" %>
 </body>

@@ -13,7 +13,7 @@
 
         #baseNavigator img {
             width: 190px;
-            margin-top: 8px;
+            /*margin-top: 8px;*/
         }
 
         #nav {
@@ -38,7 +38,7 @@
 <div class="content">
     <div class="contentMain"></div>
     <div class="loginDiv">
-        <div class="loginSwitch" id="loginSwitch"></div>
+<%--        <div class="loginSwitch" id="loginSwitch"></div>--%>
 <%--        <div class="loginMessage">--%>
 <%--            <div class="loginMessageMain">--%>
 <%--                <div class="poptip-arrow"><em></em><span></span></div>--%>
