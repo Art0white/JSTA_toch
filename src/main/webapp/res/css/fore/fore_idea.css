@@ -1,8 +1,9 @@
 @charset "UTF-8";
 /*PEN STYLES*/
-* {
-    box-sizing: border-box;
-}
+
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
 
 /* 页面头线 */
 .idea-line1 {
