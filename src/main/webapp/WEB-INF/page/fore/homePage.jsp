@@ -35,23 +35,18 @@
         <ul class="nav_li">
             <li>
                 <div class="home-nav-menu">
-                    <a href="http://vip.tmall.com/" target="_blank">所有产品</a>
+                    <a target="_blank">所有产品</a>
                     <div class="nav-menu-quick_DirectPromoDiv">
-                        <ul>
-                            <li>
-                                <a href="">商家中心</a>
-                                <a href="">天猫规则</a>
-                                <a href="">商家入驻</a>
-                                <a href="">运营服务</a>
-                                <a href="">商家品控</a>
-                                <a href="">商家工具</a>
-                                <a href="">天猫智库</a>
-                                <a href="">喵言喵语</a>
-                            </li>
-                            <li>
-                                <a href="">帮助中心</a>
-                                <a href="">问商友</a>
-                            </li>
+                        <ul class="banner_nav">
+                            <c:forEach items="${requestScope.categoryList}" var="category">
+                                <li data-toggle="${category.category_id}" data-status="">
+                                    <img src="${pageContext.request.contextPath}/res/images/fore/WebsiteImage/small/${category.category_id}.png">
+                                    <a href="${pageContext.request.contextPath}/product?category_id=${category.category_id}">${category.category_name}</a>
+                                    <div class="banner_div" name="${category.category_name}">
+
+                                    </div>
+                                </li>
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -63,12 +58,12 @@
             </li>
             <li>
                 <div class="home-nav-menu">
-                    <a href="https://3c.tmall.com/" target="_blank">售后服务</a>
+                    <a href="${pageContext.request.contextPath}/newIdea/afterSales" target="_blank">售后服务</a>
                 </div>
             </li>
             <li>
                 <div class="home-nav-menu">
-                    <a href="https://miao.tmall.com/" target="_blank">关于我们</a>
+                    <a href="${pageContext.request.contextPath}/newIdea/aboutUs" target="_blank">关于我们</a>
                 </div>
             </li>
         </ul>
