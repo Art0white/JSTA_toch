@@ -48,47 +48,64 @@
 
 .nav-menu-quick_DirectPromoDiv {
     top: 100px;
-    width: 150px;
-    right: 0;
-    left: auto;
+    width: 1060px;
+    height: 500px;
+    right: auto;
+    left: 0;
     display: none;
     line-height: 1.4;
     padding: 8px 10px;
     position: absolute;
     z-index:2;
     /*position: absolute;*/
-    border: 1px solid #eeeeee;
-    border-top: 0;
-    border-bottom: 0;
+    /*border: 1px solid #eeeeee;*/
+    /*border-top: 0;*/
+    /*border-bottom: 0;*/
+    border-top:2px solid #d4240d;
     background: #ffffff;
 }
 
-.nav-menu-quick_DirectPromoDiv > ul {
-    margin-top: -5px;
-    overflow: hidden;
-    width: 150px;
-    position: relative;
-}
-
-.nav-menu-quick_DirectPromoDiv > ul> li {
-    float: none;
-    padding: 5px 0;
-    height: auto;
+.banner_nav > li {
+    font-family: "Microsoft YaHei UI", serif;
     display: block;
-    line-height: 1.4;
-    border-bottom: 1px dotted #827777;
-    margin-right: -20px;
-    position: relative;
+    height: 30px;
+    line-height: 31.2px;
+    font-size: 14px;
 }
 
-.nav-menu-quick_DirectPromoDiv > ul> li > a {
-    color: #666666;
-    display: inline-block;
-    width: 60px;
-    margin-right: 20px;
-    line-height: 22px;
-    padding: 0;
+.banner_nav > li:hover {
+    background-color: #ffffff;
+}
+
+.banner_nav > li > img {
+    width: 16px;
+    margin: 0 14px;
     position: relative;
+    bottom: 3px;
+}
+
+.banner_nav > li > a {
+    cursor: pointer;
+    color: #000000;
+!important;
+}
+
+.banner_nav > li > a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+.banner_nav > li > .banner_div {
+    position: absolute;
+    left: 200px;
+    top: 0;
+    width: 650px;
+    height: 470px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    display: none;
+    padding: 15px 100px;
+    z-index: 999;
 }
 
 .our-navbar > .nav_li > li > .home-nav-menu > a {
@@ -221,55 +238,6 @@
     margin: auto;
     position: relative;
     z-index:1;
-}
-
-.banner_main > .banner_nav {
-    width: 200px;
-    height: 500px;
-    background-color: rgba(0, 0, 0, .55);
-    margin: 0;
-}
-
-.banner_nav > li {
-    font-family: "Microsoft YaHei UI", serif;
-    display: block;
-    height: 31.2px;
-    line-height: 31.2px;
-    font-size: 14px;
-}
-
-.banner_nav > li:hover {
-    background-color: #ffffff;
-}
-
-.banner_nav > li > img {
-    width: 16px;
-    margin: 0 14px;
-    position: relative;
-    bottom: 3px;
-}
-
-.banner_nav > li > a {
-    cursor: pointer;
-    color: #ffffff;
-!important;
-}
-
-.banner_nav > li > a:hover {
-    text-decoration: none;
-}
-
-.banner_nav > li > .banner_div {
-    position: absolute;
-    left: 200px;
-    top: 0;
-    width: 650px;
-    height: 470px;
-    overflow: hidden;
-    background-color: #FFFFFF;
-    display: none;
-    padding: 15px 100px;
-    z-index: 999;
 }
 
 .banner_div > .hot_word {

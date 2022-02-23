@@ -56,7 +56,7 @@ $(function () {
             }
         });
     }, function () {
-        $(this).find(">a").css("color", "#FFFFFF");
+        $(this).find(">a").css("color", "#000000");
         $(this).find(".banner_div").css("display", "none");
     });
     //搜索框验证
