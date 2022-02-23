@@ -50,6 +50,39 @@ public class IdeaController {
         return modelAndView;
     }
 
+    /**
+     * 跳转到售后服务页面
+     * @return
+     */
+    @RequestMapping(value = "/afterSales", method = RequestMethod.GET)
+    public ModelAndView goToPage1(HttpSession session, Map<String, Object> map) {
+        Object userId = session.getAttribute("userId");
+        if (userId != null) {
+            User user = userService.get(Integer.parseInt(userId.toString()));
+            map.put("user", user);
+        }
+
+        ModelAndView modelAndView =new ModelAndView("fore/afterSalesPage");
+        ideaService.getNewIdea(session, map);
+        return modelAndView;
+    }
+
+    /**
+     * 跳转到关于我们页面
+     * @return
+     */
+    @RequestMapping(value = "/aboutUs", method = RequestMethod.GET)
+    public ModelAndView goToPage2(HttpSession session, Map<String, Object> map) {
+        Object userId = session.getAttribute("userId");
+        if (userId != null) {
+            User user = userService.get(Integer.parseInt(userId.toString()));
+            map.put("user", user);
+        }
+
+        ModelAndView modelAndView =new ModelAndView("fore/aboutUsPage");
+        ideaService.getNewIdea(session, map);
+        return modelAndView;
+    }
 //    /**
 //     * 获取new idea模块所有信息
 //     * @return
